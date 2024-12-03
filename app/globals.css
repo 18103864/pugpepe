@@ -1,21 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: #4a5568;
+  --color-secondary: #718096;
+  --color-accent: #6b46c1;
+  --color-background: #f7fafc;
+  --color-text: #2d3748;
+  --font-bangers: 'Bangers', cursive;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-bangers);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
+
+h1, h2, h3, h4, h5, h6, p, a, button, input, textarea {
+  font-family: var(--font-bangers);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes floating-money {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-400px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+  }
+}
+
+.animate-floating-money {
+  animation: floating-money 15s linear infinite;
+}
+
+@keyframes tilt {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+}
+
+.animate-tilt {
+  animation: tilt 10s infinite linear;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-primary {
+  background-image: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+}
+
+.gradient-text-secondary {
+  background-image: linear-gradient(45deg, var(--color-secondary), var(--color-accent));
+}
+
+.gradient-card-primary {
+  background-image: linear-gradient(135deg, #e2e8f0, #edf2f7);
+}
+
+.gradient-card-secondary {
+  background-image: linear-gradient(135deg, #e9d8fd, #d6bcfa);
+}
+
